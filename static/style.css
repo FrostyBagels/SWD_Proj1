@@ -1,0 +1,152 @@
+/* General */
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 40px;
+    line-height: 1.5;
+}
+
+/* Headings */
+
+h1 {
+    color: #1e3a8a;
+    margin-bottom: 30px;
+    margin-left: 0;
+}
+
+/* Tables */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Alternating rows */
+
+.odd_row {
+    background-color: #ffffff;
+}
+
+.even_row {
+    background-color: #f9fafb;
+}
+
+/* Forms */
+
+input,
+select,
+textarea {
+    width: 100%;
+    max-width: 700px;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all .2s ease;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+/* Labels */
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+/* Errors */
+
+.error {
+    color: #dc2626;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Low GPA warning */
+
+.low_gpa {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* Buttons */
+
+button,
+input[type="submit"] {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+/* Create */
+
+.create_button {
+    background: #2563eb;
+    color: white;
+}
+
+.create_button:hover {
+    background: #1d4ed8;
+}
+
+/* Update */
+
+.update_button {
+    background: #16a34a;
+    color: white;
+}
+
+.update_button:hover {
+    background: #15803d;
+}
+
+/* Delete */
+
+.delete_button {
+    background: #dc2626;
+    color: white;
+}
+
+.delete_button:hover {
+    background: #b91c1c;
+}
