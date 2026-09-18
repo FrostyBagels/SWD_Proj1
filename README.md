@@ -1,3 +1,4 @@
 # SWD_Proj1
-Repo for Project 1 SWD
+This document serves as the README for SWD_Proj1. 
+Repo URL: https://github.com/FrostyBagels/SWD_Proj1
 Author Names: Steph Rivera
