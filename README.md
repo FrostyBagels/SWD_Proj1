@@ -8,7 +8,6 @@ Author Names: Steph Rivera, Tyler Black
 #### Branches
 - main (production)
 - dev  (main development)
-- test (secondary development & testing)
 
 
 ## Team Roles
@@ -17,10 +16,10 @@ Assign roles to each team member by completing the table below. A member may tak
 
 |Name|Role(s)|
 |--|--|
-| Cameron | Developer |
-| Tyler | Tester & Documenation |
+| Cameron | Developer 1 |
+| Tyler | Testing & Review |
 | Stephanie | Manager | 
-| Pete? | ?? |
+| Pete | Developer 2 & Documenter |
 
 
 ## Schedule 
