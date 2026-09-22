@@ -1,4 +1,29 @@
 @startuml class
 left to right direction
 
+class signup {
+    - UserID: String
+    - Name: String
+    - About: String
+    - Password: String
+}
+
+class login {
+    - UserID: String
+    - Password: String
+}
+
+class enrollment{
+    - CoursePrefix: String
+    - CourseNumber: Int
+    - CourseName: String
+    - CreditHours: Int
+    - CourseGrade: String
+
+}
+
+class authentication{}
+
+
+
 @enduml
