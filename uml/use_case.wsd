@@ -1,19 +1,19 @@
 @startuml use_case
 :Student:
-:User:
 
-User <|-- Student
+
 package "Student GPA System" {
-    :User: --> (Logs in)
-    :Student: --> (Logs in)
-    :Student: --> (Past Courses) 
-    (Past Courses) .. (Current GPA) : includes
-    :Student: --> (Current Courses)
-    :Student: --> (Current GPA)
-    :Student: --> (Grade Update)
-    :Student: --> (Grade deletion)
-    (Past Courses) .. (Grade Deletion) : extends
-    (Past Courses) .. (Grade Update) : extends
-
+    :Student: --> (sign up)
+    :Student: --> (log in)
+    :Student: --> (view enrollments)
+    :Student: --> (select course)
+    :Student: --> (enters grade)
+    :Student: --> (updates grade)
+    :Student: --> (deletes grade)
+    
+    (view enrollments) .. (current GPA) : includes
+    (enters grade) .. (GPA updates) : includes
+    (updates grade) .. (GPA updates) : includes
+    (deletes grade) .. (GPA updates) : includes
 }
 @enduml

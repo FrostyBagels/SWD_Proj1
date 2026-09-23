@@ -1,17 +1,6 @@
 @startuml class
 left to right direction
 
-class Signup {
-    - UserID: String
-    - Name: String
-    - About: String
-    - Password: String
-}
-
-class Login {
-    - UserID: String
-    - Password: String
-}
 
 class Course {
     - CoursePrefix: String
@@ -24,24 +13,18 @@ class Enrollment{
     - UserID: String
     - CoursePrefix: String
     - CourseNumber: Int
-    - CourseName: String
-    - CreditHours: Int
     - CourseGrade: String
-    - CurrentGPA: Float
 
 }
-
-class Authentication{}
 
 class Student{
     - StudentName: String
     - StudentID: String
     - UserID: String
 }
-Student "1" *--> "1" Signup
-Student "1" *--> "1" Login
-Student "0..N" o--> "0..N" Course
-Course "0..N" o--> "0..N" Enrollment
-Student "0..N" o--> "0..N" Enrollment
+
+Student "1" *--> "0..N" Enrollment
+Course "1" *--> "0..N" Enrollment
+
 
 @enduml
