@@ -1,3 +1,19 @@
 @startuml use_case
+:Student:
 
+
+package "Student GPA System" {
+    :Student: --> (sign up)
+    :Student: --> (log in)
+    :Student: --> (view enrollments)
+    :Student: --> (select course)
+    :Student: --> (enters grade)
+    :Student: --> (updates grade)
+    :Student: --> (deletes grade)
+    
+    (view enrollments) .. (current GPA) : includes
+    (enters grade) .. (GPA updates) : includes
+    (updates grade) .. (GPA updates) : includes
+    (deletes grade) .. (GPA updates) : includes
+}
 @enduml
