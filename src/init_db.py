@@ -10,7 +10,11 @@ from app.models import Course
 
 # TODO
 courses = [
-    
+    ('CS', '3250', 'Software Development Methods and Tools', 4),
+    ('CS', '2240', 'Discrete Structures', 4),
+    ( 'MTH', '3210', 'Probability and Statistics', 4),
+    ('THE', '2295', 'Comedy: In-Print and On-Stage', 3),
+    ('MTH', '3130', 'Linear Algebra', 4)
 ]
 
 with app.app_context():
