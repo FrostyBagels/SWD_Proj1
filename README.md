@@ -1,14 +1,13 @@
 # SWD_Proj1
 This document serves as the README for SWD_Proj1. 
 Repo URL: https://github.com/FrostyBagels/SWD_Proj1
-Author Names: Steph Rivera, Tyler Black, Pete Dives, 
+Author Names: Steph Rivera, Tyler Black, Cameron Greeson, Pete Dives
 
 ## Requirements
 
 #### Branches
 - main (production)
 - dev  (main development)
-- test (secondary development & testing)
 
 
 ## Team Roles
@@ -18,9 +17,9 @@ Assign roles to each team member by completing the table below. A member may tak
 |Name|Role(s)|
 |--|--|
 | Cameron | Developer |
-| Tyler | Tester & Documenation |
+| Tyler | Tester & Documentation |
 | Stephanie | Manager | 
-| Pete | Developer & Documentation |
+| Pete | Developer 2 & Documenter |
 
 
 ## Schedule 
