@@ -20,7 +20,7 @@ Assign roles to each team member by completing the table below. A member may tak
 | Cameron | Developer |
 | Tyler | Tester & Documenation |
 | Stephanie | Manager | 
-| Pete? | ?? |
+| Pete | Developer & Documentation |
 
 
 ## Schedule 
