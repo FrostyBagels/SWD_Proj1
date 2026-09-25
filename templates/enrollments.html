@@ -19,7 +19,17 @@
                     <td>{{ enrollment.course.number }}</td>
                     <td>{{ enrollment.course.name }}</td>
                     <td>{{ enrollment.course.credits }}</td>
-                    <td>{{ enrollment.grade if enrollment.grade else '-' }}</td>
+                    <td>
+                        <form action="{{ url_for('update_enrollment', course_prefix=enrollment.course.prefix, course_number=enrollment.course.number) }}" method="POST">
+                            {{ update_form.hidden_tag() }}
+                            <select name="grade">
+                                {% for choice in update_form.grade.choices %}
+                                    <option value="{{ choice }}" {% if choice == enrollment.grade %}selected{% endif %}>{{ choice }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit">Update</button>
+                        </form>
+                    </td>
                     <td>
                         <form action="{{ url_for('delete_enrollment', course_prefix=enrollment.course.prefix, course_number=enrollment.course.number) }}" method="POST" onsubmit="return confirm('Delete this enrollment?')">
                             {{ delete_form.hidden_tag() }}

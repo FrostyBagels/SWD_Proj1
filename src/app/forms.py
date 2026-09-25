@@ -30,6 +30,10 @@ GRADE_CHOICES = [
     'F'
 ]
 
+class UpdateGradeForm(FlaskForm):
+    grade = SelectField('Grade', choices=GRADE_CHOICES, validators=[DataRequired()] )
+    submit = SubmitField('Update')
+
 class EnrollmentForm(FlaskForm):
     course = SelectField('Course', validators=[DataRequired()])
     grade = SelectField('Grade', choices=GRADE_CHOICES, validators=[DataRequired()])
