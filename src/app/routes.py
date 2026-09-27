@@ -84,11 +84,6 @@ def delete_enrollment(course_prefix, course_number):
             db.session.commit()
     return redirect(url_for('list_enrollments'))
 
-    if enrollment:
-        db.session.delete(enrollment)
-        db.session.commit()
-
-    return redirect(url_for('list_enrollments'))
 # TODO
 @app.route('/enrollments/create', methods=['GET', 'POST'])
 @login_required
