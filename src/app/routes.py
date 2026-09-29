@@ -13,10 +13,11 @@ from flask import render_template, redirect, url_for, request
 from flask_login import login_required, login_user, logout_user, current_user
 import bcrypt
 
+
 @app.route('/')
 @app.route('/index')
 @app.route('/index.html')
-def index(): 
+def index():
     return render_template('index.html')
 
 @app.route('/users/signup', methods=['GET', 'POST'])
@@ -94,7 +95,8 @@ def delete_enrollment(course_prefix, course_number):
 @login_required
 def create_enrollment():
     form = EnrollmentForm()
-    form.course.choices = [f'{c.prefix} {c.number}' for c in Course.query.all()]
+    form.course.choices = [(f'{c.prefix} {c.number}', f'{c.prefix} {c.number} - {c.name}') for c in Course.query.all()]
+
     if form.validate_on_submit():
         prefix, number = form.course.data.split(' ', 1)
         existing = Enrollment.query.filter_by(user_id=current_user.id, course_prefix=prefix, course_number=number).first()
