@@ -3,3 +3,5 @@ flask-wtf
 flask-sqlalchemy
 flask-login
 bcrypt
+wtforms
+sqlalchemy
