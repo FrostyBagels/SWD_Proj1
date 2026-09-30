@@ -1,4 +1,30 @@
 @startuml class
 left to right direction
 
+
+class Course {
+    - CoursePrefix: String
+    - CourseNumber: Int
+    - CourseName: String
+    - CreditHours: Int
+}
+
+class Enrollment{
+    - UserID: String
+    - CoursePrefix: String
+    - CourseNumber: Int
+    - CourseGrade: String
+
+}
+
+class Student{
+    - StudentName: String
+    - StudentID: String
+    - UserID: String
+}
+
+Student "1" *--> "0..N" Enrollment
+Course "1" *--> "0..N" Enrollment
+
+
 @enduml

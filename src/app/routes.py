@@ -13,28 +13,64 @@ from flask import render_template, redirect, url_for, request
 from flask_login import login_required, login_user, logout_user, current_user
 import bcrypt
 
+
 @app.route('/')
 @app.route('/index')
 @app.route('/index.html')
-def index(): 
+def index():
     return render_template('index.html')
 
-# TODO: from hwk-3
 @app.route('/users/signup', methods=['GET', 'POST'])
 def signup():
-    return "Work in progress..."
+    form = SignUpForm()
+
+    # Signup Form Validation
+    if form.validate_on_submit():
+
+        # Invalid: passwords do not match
+        if form.passwd.data != form.passwd_confirm.data:
+            print("Passwords do not match!")
+            return render_template('signup.html', form=form, error='Passwords do not match.')
+
+        # Invalid: user already exists
+        if User.query.filter_by(id=form.id.data).first():
+            print("User already exists!")
+            return render_template('signup.html', form=form, error='User already exists.')
+
+        hashed = bcrypt.hashpw(form.passwd.data.encode('utf-8'), bcrypt.gensalt())
+        user = User(id=form.id.data, name=form.name.data, about=form.about.data, passwd=hashed)
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('login'))
+
+    # Main Signup Template
+    return render_template("signup.html", form=form, success=True)
     
-# TODO: from hwk-3
 @app.route('/users/login', methods=['GET', 'POST'])
 def login():
-    return "Work in progress..."
+    form = LoginForm()
 
-# TODO: from hwk-3
+    # User login attempt
+    if form.validate_on_submit():
+        user = User.query.filter_by(id=form.id.data).first()
+
+        # Successful Login
+        if user and bcrypt.checkpw(form.passwd.data.encode('utf-8'), user.passwd):
+            login_user(user)
+            return redirect(url_for("list_enrollments"))
+
+        # Invalid Login
+        else:
+            return render_template('login.html', form=form, error='Invalid username or password.')
+
+    # Login Template
+    return render_template('login.html', form=form)
+
 @app.route('/users/signout', methods=['GET', 'POST'])
 def signout():
-    return "Work in progress..."
+    logout_user()
+    return redirect(url_for('index'))
 
-# TODO
 @app.route('/enrollments')
 @login_required
 def list_enrollments():
@@ -44,7 +80,6 @@ def list_enrollments():
     update_form = UpdateGradeForm()
     return render_template('enrollments.html', enrollments=enrollments, gpa=gpa, delete_form=delete_form, update_form=update_form)
 
-# TODO
 @app.route('/enrollments/delete/<course_prefix>/<course_number>', methods=['POST'])
 @login_required
 def delete_enrollment(course_prefix, course_number):
@@ -56,12 +91,12 @@ def delete_enrollment(course_prefix, course_number):
             db.session.commit()
     return redirect(url_for('list_enrollments'))
 
-# TODO
 @app.route('/enrollments/create', methods=['GET', 'POST'])
 @login_required
 def create_enrollment():
     form = EnrollmentForm()
-    form.course.choices = [f'{c.prefix} {c.number}' for c in Course.query.all()]
+    form.course.choices = [(f'{c.prefix} {c.number}', f'{c.prefix} {c.number} - {c.name}') for c in Course.query.all()]
+
     if form.validate_on_submit():
         prefix, number = form.course.data.split(' ', 1)
         existing = Enrollment.query.filter_by(user_id=current_user.id, course_prefix=prefix, course_number=number).first()
