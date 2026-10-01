@@ -34,4 +34,3 @@ def calculate_gpa(enrollments):
     if total_credits == 0:
         return 0
     return total_points / total_credits
-
