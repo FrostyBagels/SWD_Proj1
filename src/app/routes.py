@@ -8,8 +8,8 @@ Description: Project 1 - GPA Calculator
 from app import app, db
 from app.models import User, Course, Enrollment
 from app.forms import SignUpForm, LoginForm, EnrollmentForm, DeleteEnrollmentForm, UpdateGradeForm
-from gpa_calculator import calculate_gpa
-from flask import render_template, redirect, url_for, request
+from gpacalculator3250 import calculate_gpa
+from flask import render_template, redirect, url_for
 from flask_login import login_required, login_user, logout_user, current_user
 import bcrypt
 

@@ -6,3 +6,4 @@ bcrypt
 pytest
 wtforms
 sqlalchemy
+gpacalculator3250

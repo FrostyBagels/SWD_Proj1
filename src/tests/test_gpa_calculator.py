@@ -1,5 +1,5 @@
 import pytest 
-from gpa_calculator import calculate_gpa
+from gpa_calc.gpacalculator3250 import calculate_gpa
 
 def test_weighted_multi_course_average():
     enrollments = [

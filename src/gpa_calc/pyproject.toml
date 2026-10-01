@@ -3,10 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "gpa-calculator"
+name = "gpacalculator3250"
 version = "0.0.1"
 authors = [
   { name="Pete Dives", email="pdives@msudenver.edu" },
+  { name="Tyler Black", email="tblack11@msudenver.edu" },
+  { name="Stephanie Rivera", email="sriver49@msudenver.edu" },
+  { name="Cameron Greeson", email="cgreeson@msudenver.edu" },
 ]
 description = "Computes credit-weighted GPA from a list of grade/credit entries."
 readme = "README.md"
