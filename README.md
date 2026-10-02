@@ -6,11 +6,11 @@ In this project, our group developed a simple web application that allows studen
 
 # Process Requirement
 The team was required to use the Waterfall process model to follow its traditional phases: 
-    - Communication
-    - Planning
-    - Modeling
-    - Construction
-    - Deployment
+- Communication
+- Planning
+- Modeling
+- Construction
+- Deployment
 
 # Communication Phase
 ## Team Roles
@@ -35,54 +35,100 @@ The team was required to use the Waterfall process model to follow its tradition
 
 
 # Construction Phase
-In order to build the package to run our app, you will need: 
-    - Python 3.10 or newer
-    - pip
+The construction of this application was primarily handled by the two developers—Pete and Cameron—,
+and some addition work was done by Tyler and Stephanie. All work was done individually
+on separate branches and merged into a development branch (`dev`). All team members approved
+and monitored the status of the `dev` branch.
 
-### 1. Cloning repository & setting up virtual environment
+# Testing Phase
+The GPA calculation logic (`calculate_gpa` in the `gpacalculator3250` package) is covered by unit tests in `src/tests/test_gpa_calculator.py` using _pytest_. To run them from the root directory of the project:
+```bash
+cd src
+python -m pytest
+```
 
+| Functionality Tested | Date | Result |
+|---|---|---|
+| Weighted GPA across multiple courses (`test_weighted_multi_course_average`) | 09/30/26 | passed |
+| GPA for a single course (`test_single_course`) | 09/30/26 | passed |
+| Empty enrollment list returns 0 (`test_empty_list_returns_zero`) | 09/30/26 | passed |
+| Ungraded and unrecognized grades are ignored (`test_ignores_upgraded_and_unrecognized_grades`) | 09/30/26 | passed |
+| Edge cases: zero credits and null grades/credits (`test_edge_cases_and_null`) | 10/01/26 | passed |
+
+
+# Deployment Phase
+The app can be run either with Docker (recommended) or directly with Python in a virtual environment.
+
+## Running with Docker (Recommended)
+
+### Prerequisites
+- [Docker](https://docs.docker.com/get-docker/) installed, with the Docker daemon running (e.g., Docker Desktop is open)
+- Git
+
+Python does not need to be installed on the host machine; the Docker image includes everything the app needs.
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/FrostyBagels/SWD_Proj1.git
+cd SWD_Proj1
+```
+
+### 2. Build the Docker image
+Run this from the root directory of the project (the directory containing the `Dockerfile`). The trailing `.` tells Docker to use the current directory as the build context.
+```bash
+docker build -t swd-proj1 .
+```
+
+### 3. Run the container
+```bash
+docker run --rm -p 5001:5001 swd-proj1
+```
+The application is attached to port `5001` to ensure cabatibility 
+with MacOS deviced running AirPlay.
+
+### 4. Open the app
+Open http://localhost:5001 in a web browser.
+
+> **Note:** Flask's startup log lists addresses such as `http://172.17.0.2:5001`. Those are addresses *inside* the container and are not reachable from the host. Use http://localhost:5001 instead.
+
+To stop the app, press `Ctrl+C` in the terminal running the container.
+
+If port 5001 is already in use on the host, map a different host port and open that port in the browser instead, e.g.:
+```bash
+docker run --rm -p 8080:5001 swd-proj1
+```
+
+## Running Locally with Python
+
+### Prerequisites
+- Python 3.10 or newer
+- pip
+- Git
+
+### 1. Clone the repository and create a virtual environment
+```bash
 git clone https://github.com/FrostyBagels/SWD_Proj1.git
 cd SWD_Proj1
 python3 -m venv .venv
-
-For macOS/Linux: 
 source .venv/bin/activate
+```
 
-For Windows Command Prompt: 
-.venv\Scripts\activate
-
-For Windows PowerShell: 
-.venv\Scripts\Activate.ps1
-
-
-### 2. Installing project dependencies and packages
-
+### 2. Install dependencies
+```bash
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+```
 
-### 3. Running Flask 
-For macOS/Linux: 
+### 3. Start the Flask development server
+Run this from the root directory of the project. `PYTHONPATH=src` lets Python find the `app` package inside `src/`.
+```bash
 PYTHONPATH=src python -m flask --app app run --port 5001
+```
 
-For Windows Command Prompt: 
-set PYTHONPATH=src
-python -m flask --app app run --port 5001
+### 4. Open the app
+Open http://127.0.0.1:5001 in a web browser. Press `Ctrl+C` to stop the server.
 
-For Windows PowerShell: 
-$env:PYTHONPATH="src"
-python -m flask --app app run --port 5001
 
-Copy & paste the following address in a web browser if desired: 
-http://127.0.0.1:5001 
-
-### 4. Running with Docker
-Make sure Docker is installed and open. From the root directory of the project, build the Docker image: 
-docker build -t swd-proj1
-docker run --rm -p 5001:5001 swd-proj1
-
-Open the link in a web browser: http://127.0.0.1:5001/
-
-# Deployment Phase
 ## User Interface
 Students will have two options when they land on the home page: 
 ![Initial Screen](pics/initial_screen.jpg)
