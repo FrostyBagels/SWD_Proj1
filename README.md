@@ -47,8 +47,14 @@ cd src
 python -m pytest
 ```
 
-| Functionality Tested | Date | Result |
-|---|---|---|
+| Functionality Tested | Date     | Result |
+|---|----------|--------|
+| Log In | 09/25/26 | passed |
+| Sign Up | 09/25/26 | failed |
+| Course Data Load (Database) | 09/25/26 | failed |
+| Sign Up | 09/26/26 | passed |
+| GPA Calculation | 09/27/26 | passed |
+| Course Data Load (Database) | 09/29/26 | passed |
 | Weighted GPA across multiple courses (`test_weighted_multi_course_average`) | 09/30/26 | passed |
 | GPA for a single course (`test_single_course`) | 09/30/26 | passed |
 | Empty enrollment list returns 0 (`test_empty_list_returns_zero`) | 09/30/26 | passed |
