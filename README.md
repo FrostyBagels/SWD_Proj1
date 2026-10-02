@@ -75,6 +75,13 @@ python -m flask --app app run --port 5001
 Copy & paste the following address in a web browser if desired: 
 http://127.0.0.1:5001 
 
+### 4. Running with Docker
+Make sure Docker is installed and open. From the root directory of the project, build the Docker image: 
+docker build -t swd-proj1
+docker run --rm -p 5001:5001 swd-proj1
+
+Open the link in a web browser: http://127.0.0.1:5001/
+
 # Deployment Phase
 ## User Interface
 Students will have two options when they land on the home page: 
