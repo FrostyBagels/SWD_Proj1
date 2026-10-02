@@ -1,30 +1,29 @@
-# SWD_Proj1
-This document serves as the README for SWD_Proj1. 
-Repo URL: https://github.com/FrostyBagels/SWD_Proj1
+# SWD_Proj1 Overview
 Author Names: Steph Rivera, Tyler Black, Cameron Greeson, Pete Dives
+Repo URL: https://github.com/FrostyBagels/SWD_Proj1
 
-## Requirements
+In this project, our group developed a simple web application that allows students to track their GPAs. Students are able to register for the application and, after successfully logging in, enter completed courses along with their corresponding letter grades. The application then displays all previously entered courses and calculate their overall GPA. Students are also able to update their letter grades if they were entered incorrectly.
 
-#### Branches
-- main (production)
-- dev  (main development)
+# Process Requirement
+The team was required to use the Waterfall process model to follow its traditional phases: 
+    - Communication
+    - Planning
+    - Modeling
+    - Construction
+    - Deployment
 
-
+# Communication Phase
 ## Team Roles
-
-Assign roles to each team member by completing the table below. A member may take on more than one role.
 
 |Name|Role(s)|
 |--|--|
 | Cameron | Developer |
 | Tyler | Tester & Documentation |
-| Stephanie | Manager | 
+| Stephanie | Manager & Documentation | 
 | Pete | Developer 2 & Documenter |
 
-
-## Schedule 
-
-Estimate a schedule for this project by completing the table below. 
+# Planning Phase
+## Schedule
 
 |Phase|Task|Start|End|Duration|Deliverable|
 |---|---|---|---|---|---|
