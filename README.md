@@ -34,6 +34,48 @@ The team was required to use the Waterfall process model to follow its tradition
 |Deployment|Delivery|10/02/26|10/03/26|1 days|Final Commit/Push|
 
 
+# Construction Phase
+In order to build the package to run our app, you will need: 
+    - Python 3.10 or newer
+    - pip
+
+### 1. Cloning repository & setting up virtual environment
+
+git clone https://github.com/FrostyBagels/SWD_Proj1.git
+cd SWD_Proj1
+python3 -m venv .venv
+
+For macOS/Linux: 
+source .venv/bin/activate
+
+For Windows Command Prompt: 
+.venv\Scripts\activate
+
+For Windows PowerShell: 
+.venv\Scripts\Activate.ps1
+
+
+### 2. Installing project dependencies and packages
+
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pip install gpacalc3250
+
+### 3. Running Flask 
+For macOS/Linux: 
+PYTHONPATH=src python -m flask --app app run --port 5001
+
+For Windows Command Prompt: 
+set PYTHONPATH=src
+python -m flask --app app run --port 5001
+
+For Windows PowerShell: 
+$env:PYTHONPATH="src"
+python -m flask --app app run --port 5001
+
+Copy & paste the following address in a web browser if desired: 
+http://127.0.0.1:5001 
+
 # Deployment Phase
 ## User Interface
 Students will have two options when they land on the home page: 
