@@ -59,7 +59,6 @@ For Windows PowerShell:
 
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-python -m pip install gpacalc3250
 
 ### 3. Running Flask 
 For macOS/Linux: 
