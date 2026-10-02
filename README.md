@@ -1,8 +1,9 @@
 # SWD_Proj1 Overview
 Author Names: Steph Rivera, Tyler Black, Cameron Greeson, Pete Dives
-Repo URL: https://github.com/FrostyBagels/SWD_Proj1
 
-In this project, our group developed a simple web application that allows students to track their GPAs. Students are able to register for the application and, after successfully logging in, enter completed courses along with their corresponding letter grades. The application then displays all previously entered courses and calculate their overall GPA. Students are also able to update their letter grades if they were entered incorrectly.
+HTTPS URL: https://github.com/FrostyBagels/SWD_Proj1
+
+In this project, our group developed a simple web application that allows students to track their GPAs. Students are able to register for the application and, after successfully logging in, enter completed courses along with their corresponding letter grades. The application then displays all previously entered courses and calculates their overall GPA. Students are also able to update their letter grades if they were entered incorrectly.
 
 # Process Requirement
 The team was required to use the Waterfall process model to follow its traditional phases: 
@@ -35,13 +36,12 @@ The team was required to use the Waterfall process model to follow its tradition
 
 
 # Construction Phase
-The construction of this application was primarily handled by the two developers—Pete and Cameron—,
-and some addition work was done by Tyler and Stephanie. All work was done individually
+The construction of this application was primarily handled by the two developers—Pete and Cameron—and some additional work was done by Tyler and Stephanie. All work was done individually
 on separate branches and merged into a development branch (`dev`). All team members approved
 and monitored the status of the `dev` branch.
 
 # Testing Phase
-The GPA calculation logic (`calculate_gpa` in the `gpacalculator3250` package) is covered by unit tests in `src/tests/test_gpa_calculator.py` using _pytest_. To run them from the root directory of the project:
+Log in, sign up, GPA calculation, and the course data load were tested manually through the web app. The GPA calculation logic (`calculate_gpa` in the `gpacalculator3250` package) is covered by unit tests in `src/tests/test_gpa_calculator.py` using _pytest_. To run them from the root directory of the project:
 ```bash
 cd src
 python -m pytest
@@ -89,8 +89,8 @@ docker build -t swd-proj1 .
 ```bash
 docker run --rm -p 5001:5001 swd-proj1
 ```
-The application is attached to port `5001` to ensure cabatibility 
-with MacOS deviced running AirPlay.
+The application is attached to port `5001` to ensure compatibility 
+with macOS devices running AirPlay.
 
 ### 4. Open the app
 Open http://localhost:5001 in a web browser.
