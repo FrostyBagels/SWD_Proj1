@@ -32,3 +32,7 @@ The team was required to use the Waterfall process model to follow its tradition
 |Construction|Coding|09/25/26|09/30/26|5 days|Code|
 |Construction|Testing|09/25/26|10/02/26|7 days|Test Report|
 |Deployment|Delivery|10/02/26|10/03/26|1 days|Final Commit/Push|
+
+
+# Deployment Phase
+## User Interface
