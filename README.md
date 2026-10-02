@@ -36,3 +36,21 @@ The team was required to use the Waterfall process model to follow its tradition
 
 # Deployment Phase
 ## User Interface
+Students will have two options when they land on the home page: 
+![Initial Screen](pics/initial_screen.jpg)
+
+To log in, they will select Login.
+
+To register, they will select Sign Up.
+![Enrollment Window](pics/enrollment_window.jpg)
+
+First time users will see the Enrollments screen empty.
+![No Enrollments](pics/no_enrollments.jpg)
+
+To add courses and grades, click on Grade Entry. Select course and grade from the drop-down menus. 
+![Course and Grade Selection](pics/course_and_grade_selection.jpg)
+
+Once necessary courses have been added, the Enrollments screen will automatically calculate the GPA.
+![Filled Course and Grade](pics/filled_course_and_grade.jpg)
+
+Students can update grades at any time by selecting a new letter grade and clicking Update. Students can delete courses at any time by clicking on Delete. The GPA automatically updates whenever a course is added, a grade is updated, or a course is deleted.
