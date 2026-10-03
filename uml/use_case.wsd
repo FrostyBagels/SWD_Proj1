@@ -1,20 +1,24 @@
 @startuml use_case
-:Student:
+left to right direction
+actor Student
 
-
-package "Student GPA System" {
-    :Student: --> (sign up)
-    :Student: --> (log in)
-    :Student: --> (sign out)
-    :Student: --> (view enrollments)
-    :Student: --> (view GPA)
-    :Student: --> (adds enrollment)
-    :Student: --> (updates grade)
-    :Student: --> (deletes enrollment)
-    
-    (view enrollments) .. (view GPA) : includes
-    (adds enrollment) .. (GPA updates) : includes
-    (updates grade) .. (GPA updates) : includes
-    (deletes enrollment) .. (GPA updates) : includes
+rectangle "Student GPA System" {
+    usecase "Sign Up" as UC1
+    usecase "Log In" as UC2
+    usecase "Sign Out" as UC3
+    usecase "View Enrollments" as UC4
+    usecase "View GPA" as UC5
+    usecase "Add Enrollment" as UC6
+    usecase "Update Grade" as UC7
+    usecase "Delete Enrollment" as UC8
 }
+
+Student --> UC1
+Student --> UC2
+Student --> UC3
+Student --> UC4
+Student --> UC5
+Student --> UC6
+Student --> UC7
+Student --> UC8
 @enduml
