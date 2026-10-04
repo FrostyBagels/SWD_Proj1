@@ -3,7 +3,7 @@ left to right direction
 
 class Course {
     - prefix: String
-    - number: Int
+    - number: String
     - name: String
     - credits: Int
 }
@@ -11,7 +11,7 @@ class Course {
 class Enrollment{
     - user_id: String
     - course_prefix: String
-    - course_number: Int
+    - course_number: String
     - grade: String
 
 }
@@ -23,7 +23,7 @@ class User {
     - passwd: Binary
 }
 
-User "1" *--> "0..N" Enrollment
-Course "1" *--> "0..N" Enrollment
+User "1" -- "0..*" Enrollment
+Course "1" -- "0..*" Enrollment
 
 @enduml
