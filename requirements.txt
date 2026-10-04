@@ -3,3 +3,7 @@ flask-wtf
 flask-sqlalchemy
 flask-login
 bcrypt
+pytest
+wtforms
+sqlalchemy
+gpacalculator3250
