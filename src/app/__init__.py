@@ -1,7 +1,7 @@
 '''
 CS3250 - Software Development Methods and Tools
 Instructor: Thyago Mota
-Student(s):
+Student(s): Cameron Greeson, Pete Dives, Steph Rivera, Tyler Black,
 Description: Project 1 - GPA Calculator
 '''
 
@@ -18,15 +18,20 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///prj1.db'
 db.init_app(app)
 
 from app import models
+import init_db
 with app.app_context(): 
     db.create_all()
+
+    if not models.Course.query.first():
+        init_db.seed_db(db)
 
 # login manager
 from flask_login import LoginManager
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-from app.models import User
+from app.models import User, Course
+
 
 # user_loader callback
 @login_manager.user_loader

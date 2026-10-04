@@ -1,7 +1,7 @@
 '''
 CS3250 - Software Development Methods and Tools
 Instructor: Thyago Mota
-Student(s):
+Student(s): Cameron Greeson, Pete Dives, Steph Rivera, Tyler Black,
 Description: Project 1 - GPA Calculator
 '''
 
@@ -14,7 +14,6 @@ GRADE_POINTS = {
     'F': 0.0
 }
 
-# TODO 
 def calculate_gpa(enrollments):
     '''
     Computes the credit-weighted GPA from a list of dictionary-like enrollments.
@@ -23,4 +22,15 @@ def calculate_gpa(enrollments):
     Enrollments with no grade yet, or an unrecognized grade, are ignored.
     Returns 0 when there are no graded credits to average.
     '''
-    return 0
+    total_points = 0
+    total_credits = 0
+    for enrollment in enrollments:
+        grade = enrollment.get('grade')
+        credits = enrollment.get('credits')
+        if grade not in GRADE_POINTS or not credits:
+            continue
+        total_points += GRADE_POINTS[grade] * credits
+        total_credits += credits
+    if total_credits == 0:
+        return 0
+    return total_points / total_credits
